@@ -26,8 +26,11 @@ while game_is_on:
     time.sleep(0.3)
     screen.update()
     if my_snake.hit_wall() or my_snake.hit_tail():
-        game_is_on = False
-        scoreboard.game_over()
+        #game_is_on = False
+        scoreboard.reset()
+        for body in my_snake.body:
+            body.goto(1000,1000)
+        my_snake.reset()
 
     if my_snake.head.distance(food) < 15:
         food.refresh()

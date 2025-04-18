@@ -15,6 +15,15 @@ class Snake:
         self.head = self.body[0]
         self.tail = self.body[-1]
 
+    def reset(self):
+        self.body.clear()
+        self.pos.clear()
+        for i in range(3):
+            self.add1(init=0)
+        self.head = self.body[0]
+        self.tail = self.body[-1]
+
+
     def add1(self,init):
         pos = len(self.body)
         self.body.append(Turtle(shape="square"))
